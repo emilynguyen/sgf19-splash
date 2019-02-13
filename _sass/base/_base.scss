@@ -1,0 +1,6 @@
+html {
+  font-size: 62.5%;
+  @include xxl-up {
+    font-size: 0.55vw;
+  }
+}

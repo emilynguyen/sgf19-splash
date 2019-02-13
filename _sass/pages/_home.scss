@@ -1,0 +1,168 @@
+$border: 8rem;
+
+#hero {
+  height: calc(100vh - 2 * #{$border});
+  width: calc(100vw - 2 * #{$border});
+  box-sizing: border-box;
+  margin: $border;
+  position: relative;
+}
+
+#hero-video {
+  filter: brightness(1.05), contrast(5), saturate(1.5);
+}
+
+#bg {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+$border-content-offset: 5.3rem;
+
+.border-content {
+  height: 3rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  &.top-left {
+    left: 0;
+    top: -$border-content-offset;
+  }
+  &.top-right {
+    right: 0;
+    top: -$border-content-offset;
+  }
+  &.bottom-left {
+    left: 0;
+    bottom: -$border-content-offset;
+  }
+  &.bottom-right {
+    right: 0;
+    bottom: -$border-content-offset;
+  }
+  img,
+  a {
+    height: 100%;
+  }
+  a {
+    transition: filter 0.5s, opacity 0.4s;
+    @include hover {
+      filter: blur(0.2rem);
+      opacity: 0.7;
+    }
+  }
+}
+
+#video-overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  mix-blend-mode: multiply;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+#countdown-container {
+  text-align: center;
+  margin: auto;
+  color: #eb212e;
+  color: #fff;
+  mix-blend-mode: lighten;
+  font-size: 4.5vw;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DejaVu Sans Mono", monospace;
+  line-height: 0;
+  letter-spacing: -0.05rem;
+}
+
+#countdown {
+  height: 8vw;
+}
+
+#details {
+  font-size: 2.5vw;
+  margin-top: 2vw;
+}
+
+.cd-unit {
+  display: inline-block;
+  position: relative;
+  &:not(:last-child)::after {
+    content: " //";
+    display: inline-block;
+    margin: 0 -2rem;
+    transform: scale(0.6);
+    letter-spacing: 1.5rem;
+  }
+}
+
+.cd-number {
+  text-align: center;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: -2vw;
+    font-size: 1.2vw;
+  }
+}
+
+#cd-days {
+  &::after {
+    content: "Days";
+  }
+}
+
+#cd-hours {
+  &::after {
+    content: "Hours";
+  }
+}
+
+#cd-mins {
+  &::after {
+    content: "Mins";
+  }
+}
+
+#cd-secs {
+  &::after {
+    content: "Secs";
+  }
+}
+
+video {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+#socials {
+  li {
+    text-align: center;
+    width: 2rem;
+    display: inline-block;
+    &:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+  }
+  img {
+    height: 1.5rem;
+  }
+}
