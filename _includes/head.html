@@ -19,7 +19,7 @@
   <!-- Favicons -->
 
   <!-- Stylesheets -->
-  <link href="/assets/css/main.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
 
   <title>
     {% if page.title == "Home" %}
@@ -27,4 +27,6 @@
     {% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{% endif
     %}
   </title>
+
+  <base href="{{ site.base }}" />
 </head>
