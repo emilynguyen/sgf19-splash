@@ -1,0 +1,6 @@
+.show-md {
+  display: none;
+  @include md-up {
+    display: inline;
+  }
+}

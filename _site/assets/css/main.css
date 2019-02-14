@@ -72,6 +72,12 @@ body {
   letter-spacing: 0.3rem;
   text-transform: uppercase; }
 
+.show-md {
+  display: none; }
+  @media (min-width: 750px) {
+    .show-md {
+      display: inline; } }
+
 #hero {
   height: calc(100vh - 2 * 4rem);
   width: calc(100vw - 2 * 4rem);
@@ -80,10 +86,15 @@ body {
   position: relative;
   font-size: 1rem;
   letter-spacing: 0.1rem; }
-  @media (min-width: 840px) {
+  @media (min-width: 750px) {
     #hero {
       font-size: initial;
       letter-spacing: initial;
+      height: calc(100vh - 2 * 6rem);
+      width: calc(100vw - 2 * 6rem);
+      margin: 6rem; } }
+  @media (min-width: 1600px) {
+    #hero {
       height: calc(100vh - 2 * 8rem);
       width: calc(100vw - 2 * 8rem);
       margin: 8rem; } }
@@ -106,7 +117,10 @@ video {
   position: absolute;
   display: flex;
   align-items: center; }
-  @media (min-width: 840px) {
+  @media (min-width: 750px) {
+    .border-content {
+      height: 2.5rem; } }
+  @media (min-width: 1600px) {
     .border-content {
       height: 3rem; } }
   .border-content.top-left {
@@ -114,7 +128,13 @@ video {
     left: -1rem;
     transform-origin: 0 100%;
     transform: rotate(-90deg); }
-    @media (min-width: 840px) {
+    @media (min-width: 750px) {
+      .border-content.top-left {
+        left: 0;
+        top: -4.1rem;
+        transform-origin: initial;
+        transform: initial; } }
+    @media (min-width: 1600px) {
       .border-content.top-left {
         left: 0;
         top: -5.3rem;
@@ -125,7 +145,13 @@ video {
     top: 16rem;
     transform-origin: center right;
     transform: rotate(90deg); }
-    @media (min-width: 840px) {
+    @media (min-width: 750px) {
+      .border-content.top-right {
+        right: 0;
+        top: -4.1rem;
+        transform-origin: initial;
+        transform: initial; } }
+    @media (min-width: 1600px) {
       .border-content.top-right {
         right: 0;
         top: -5.3rem;
@@ -136,7 +162,14 @@ video {
     bottom: 0;
     transform-origin: center right;
     transform: rotate(90deg); }
-    @media (min-width: 840px) {
+    @media (min-width: 750px) {
+      .border-content.bottom-left {
+        left: 0;
+        right: initial;
+        bottom: -4.1rem;
+        transform-origin: initial;
+        transform: initial; } }
+    @media (min-width: 1600px) {
       .border-content.bottom-left {
         left: 0;
         right: initial;
@@ -148,7 +181,14 @@ video {
     left: -1.2rem;
     transform-origin: 0 100%;
     transform: rotate(-90deg); }
-    @media (min-width: 840px) {
+    @media (min-width: 750px) {
+      .border-content.bottom-right {
+        left: initial;
+        right: 0;
+        bottom: -4.1rem;
+        transform-origin: initial;
+        transform: initial; } }
+    @media (min-width: 1600px) {
       .border-content.bottom-right {
         left: initial;
         right: 0;
@@ -176,12 +216,11 @@ video {
   z-index: 999; }
 
 #countdown-container {
+  user-select: none;
   text-align: center;
   margin: auto;
   color: #eb212e;
-  color: #fff;
   mix-blend-mode: lighten;
-  font-size: 4.5vw;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -193,34 +232,96 @@ video {
   align-items: center;
   font-family: "DejaVu Sans Mono", monospace;
   line-height: 0;
-  letter-spacing: -0.05rem; }
+  letter-spacing: -0.05rem;
+  font-size: 5vh; }
+  @media (min-width: 750px) {
+    #countdown-container {
+      font-size: 4.5vw; } }
 
 #countdown {
-  height: 8vw; }
+  margin-top: -12vh;
+  height: 100%; }
+  @media (min-width: 750px) {
+    #countdown {
+      margin-top: 0;
+      margin-bottom: 7vw; } }
+
+#date {
+  letter-spacing: 0.2rem; }
 
 #details {
-  font-size: 2.5vw;
-  margin-top: 2vw; }
+  font-size: 2.2vh;
+  margin-top: -5vh;
+  line-height: 180%;
+  position: relative; }
+  #details::after {
+    content: "";
+    position: absolute;
+    top: -1.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5vh;
+    border: 0.1rem solid #eb212e; }
+    @media (min-width: 750px) {
+      #details::after {
+        display: none; } }
+  @media (min-width: 750px) {
+    #details {
+      font-size: 2.5vw;
+      margin-top: 2vw; }
+      #details br {
+        display: none; } }
 
 .cd-unit {
-  display: inline-block;
-  position: relative; }
+  display: block;
+  position: relative;
+  margin: 15vh 0; }
+  @media (min-width: 750px) {
+    .cd-unit {
+      margin: 0;
+      display: inline-block; } }
   .cd-unit:not(:last-child)::after {
-    content: " //";
-    display: inline-block;
-    margin: 0 -2rem;
-    transform: scale(0.6);
-    letter-spacing: 1.5rem; }
+    content: "//";
+    position: absolute;
+    bottom: -9vh;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5); }
+    @media (min-width: 750px) {
+      .cd-unit:not(:last-child)::after {
+        display: block;
+        content: " //";
+        width: initial;
+        position: initial;
+        bottom: initial;
+        left: initial;
+        display: inline-block;
+        margin: 0 -2rem 0 -1rem;
+        transform: scale(0.6);
+        letter-spacing: 1.5rem; } }
 
 .cd-number {
   text-align: center;
-  position: relative; }
+  position: relative;
+  text-align: center; }
+  .cd-number::before {
+    display: block;
+    margin: 0;
+    padding: 0;
+    content: "//";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; }
   .cd-number::after {
     position: absolute;
     left: 0;
     width: 100%;
-    bottom: -2vw;
-    font-size: 1.2vw; }
+    bottom: -1.4vh;
+    font-size: 1.5vh; }
+    @media (min-width: 750px) {
+      .cd-number::after {
+        bottom: -2vw;
+        font-size: 1.2vw; } }
 
 #cd-days::after {
   content: "Days"; }
@@ -236,7 +337,7 @@ video {
 
 #socials {
   transform: rotate(180deg); }
-  @media (min-width: 840px) {
+  @media (min-width: 750px) {
     #socials {
       transform: initial; } }
   #socials li {
@@ -246,11 +347,11 @@ video {
     transform: rotate(-90deg); }
     #socials li:not(:first-child) {
       margin-left: 1.5rem; }
-    @media (min-width: 840px) {
+    @media (min-width: 750px) {
       #socials li {
         transform: initial; } }
   #socials img {
     height: 1.2rem; }
-    @media (min-width: 840px) {
+    @media (min-width: 750px) {
       #socials img {
         height: 1.5rem; } }
