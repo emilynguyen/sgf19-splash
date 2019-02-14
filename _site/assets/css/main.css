@@ -144,7 +144,8 @@ video {
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  letter-spacing: 0.18rem; }
   @media (min-width: 750px) {
     .border-content {
       height: 2.5rem; } }
@@ -176,7 +177,7 @@ video {
                 transform: initial; } }
   .border-content.top-right {
     right: -2rem;
-    top: 16rem;
+    top: 18rem;
     -webkit-transform-origin: center right;
             transform-origin: center right;
     -webkit-transform: rotate(90deg);
@@ -320,7 +321,7 @@ video {
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     width: 5vh;
-    border: 0.1rem solid #ffac92; }
+    border: 0.05rem solid #ffac92; }
     @media (min-width: 750px) {
       #details::after {
         display: none; } }

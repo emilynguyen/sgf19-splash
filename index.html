@@ -84,6 +84,9 @@ permalink: /
 </div>
 
 <script>
+  var hero = document.getElementById("hero");
+  hero.style.height = window.innerHeight;
+
   document.getElementById("hero-video").onended = function() {
     this.load();
     this.play();

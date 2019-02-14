@@ -76,6 +76,7 @@ $border-content-offset-lg: 5.3rem;
   position: absolute;
   display: flex;
   align-items: center;
+  letter-spacing: 0.18rem;
   @include md-up {
     height: 2.5rem;
   }
@@ -102,7 +103,7 @@ $border-content-offset-lg: 5.3rem;
   }
   &.top-right {
     right: -2rem;
-    top: 16rem;
+    top: 18rem;
     transform-origin: center right;
     transform: rotate(90deg);
     @include md-up {
@@ -224,7 +225,7 @@ $border-content-offset-lg: 5.3rem;
     left: 50%;
     transform: translateX(-50%);
     width: 5vh;
-    border: 0.1rem solid $red;
+    border: 0.05rem solid $red;
     @include md-up {
       display: none;
     }
@@ -279,7 +280,6 @@ $border-content-offset-lg: 5.3rem;
     padding: 0;
     content: "//";
     position: absolute;
-
     left: 50%;
     transform: translateX(-50%);
     display: none;
