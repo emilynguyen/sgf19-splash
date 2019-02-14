@@ -9,7 +9,7 @@ github_username: emilynguyen
 # Build settings
 markdown: kramdown
 plugins:
-  #- jekyll-autoprefixer
+  - jekyll-autoprefixer
 sass:
   sass_dir: _sass
 include: ["_pages"]
