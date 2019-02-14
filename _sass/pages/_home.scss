@@ -24,12 +24,22 @@ $border-lg: 8rem;
   }
 }
 
-#hero-video {
-  //filter: brightness(1.05), contrast(5), saturate(1.5);
+#video-overlay {
+  background-color: rgba(0, 0, 0, 0.15);
+  background-blend-mode: multiply;
+  background-blend-mode: overlay;
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 video {
-  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -161,24 +171,12 @@ $border-content-offset-lg: 5.3rem;
   }
 }
 
-#video-overlay {
-  background-color: rgba(0, 0, 0, 0.1);
-  mix-blend-mode: multiply;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
-
 #countdown-container {
   user-select: none;
   text-align: center;
   margin: auto;
   color: $red;
-  mix-blend-mode: lighten;
-
+  mix-blend-mode: overlay;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -195,6 +193,10 @@ $border-content-offset-lg: 5.3rem;
   @include md-up {
     font-size: 4.5vw;
   }
+}
+
+#countdown-wrapper {
+  margin-top: 4vw;
 }
 
 #countdown {
