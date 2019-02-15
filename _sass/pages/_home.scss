@@ -25,10 +25,8 @@ $border-lg: 8rem;
 }
 
 #video-overlay {
-  background-color: rgba(0, 0, 0, 0.15);
-  background-blend-mode: multiply;
-  background-blend-mode: overlay;
-
+  background-color: rgba(0, 0, 0, 0.17);
+  mix-blend-mode: multiply;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -37,7 +35,8 @@ $border-lg: 8rem;
   z-index: 999;
 }
 
-video {
+#hero-video {
+  filter: contrast(108%) saturate(105%);
   min-height: 100%;
   min-width: 100%;
   position: absolute;
@@ -177,7 +176,7 @@ $border-content-offset-lg: 5.3rem;
   text-align: center;
   margin: auto;
   color: $red;
-  mix-blend-mode: overlay;
+  mix-blend-mode: screen;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -197,6 +196,7 @@ $border-content-offset-lg: 5.3rem;
 }
 
 #countdown-wrapper {
+  //text-shadow: 0rem 0rem 20rem rgb(38, 37, 43);
   margin-top: 4vw;
 }
 
