@@ -14,6 +14,9 @@ permalink: /
     <p>Registration Coming Soon</p>
   </div>
   <div class="border-content bottom-left">
+    <a id="asce-logo" href="http://asce.ucsd.edu/" target="_blank">
+      <img src="assets/images/asce-logo.svg" alt="AS Concerts & Events"
+    /></a>
     <a href="https://ucsandiegobookstore.com/" target="_blank">
       <img src="assets/images/bookstore-logo.svg" alt="UC San Diego Bookstore"
     /></a>
@@ -84,13 +87,12 @@ permalink: /
 </div>
 
 <script>
-  //var hero = document.getElementById("hero");
-  //hero.style.height = window.innerHeight;
-
-  document.getElementById("hero-video").onended = function() {
+  var video = document.getElementById("hero-video");
+  video.onended = function() {
     this.load();
     this.play();
   };
+  video.controls = false;
 </script>
 
 <script>

@@ -110,8 +110,8 @@ body {
   z-index: 999; }
 
 #hero-video {
-  -webkit-filter: contrast(108%) saturate(105%);
-          filter: contrast(108%) saturate(105%);
+  -webkit-filter: contrast(105%) saturate(105%);
+          filter: contrast(105%) saturate(105%);
   min-height: 100%;
   min-width: 100%;
   position: absolute;
@@ -262,6 +262,9 @@ body {
         -webkit-filter: blur(0.2rem);
                 filter: blur(0.2rem);
         opacity: 0.7; } }
+
+#asce-logo {
+  margin-right: 2rem; }
 
 #countdown-container {
   -webkit-user-select: none;
