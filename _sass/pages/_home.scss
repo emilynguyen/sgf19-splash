@@ -45,17 +45,25 @@ $border-lg: 8rem;
   -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
-*::-webkit-media-controls-panel {
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
   display: none !important;
   -webkit-appearance: none !important;
 }
 
-*::-webkit-media-controls-play-button {
+video::-webkit-media-controls-play-button {
   display: none !important;
   -webkit-appearance: none !important;
 }
 
-*::-webkit-media-controls-start-playback-button {
+video::-webkit-media-controls-start-playback-button {
   display: none !important;
   -webkit-appearance: none !important;
 }
