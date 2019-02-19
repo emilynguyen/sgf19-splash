@@ -47,17 +47,17 @@ $border-lg: 8rem;
 
 *::-webkit-media-controls-panel {
   display: none !important;
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
 }
 
 *::-webkit-media-controls-play-button {
   display: none !important;
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
 }
 
 *::-webkit-media-controls-start-playback-button {
   display: none !important;
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
 }
 
 #bg {
