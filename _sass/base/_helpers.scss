@@ -4,3 +4,7 @@
     display: inline;
   }
 }
+
+.unselectable {
+  user-select: none;
+}

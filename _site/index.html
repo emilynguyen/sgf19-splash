@@ -14,9 +14,9 @@
   <meta property="og:type" content="website" />
   <meta
     property="og:image"
-    content="http://sgf.dreamhosters.com/sgf19/assets/images/preview.png"
+    content="http://localhost:4000/assets/images/preview.png"
   />
-  <meta property="og:url" content="http://sgf.dreamhosters.com/sgf19" />
+  <meta property="og:url" content="http://localhost:4000" />
   <meta property="og:description" content="04.27.2019 | 12PM – 6PM | RIMAC" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -84,23 +84,22 @@
 	<main>
 		<article>
 			<div id="hero">
-  <div class="border-content top-left">
-    <a href="">
-      <img src="assets/images/sgf-logo.svg" alt="Sun God Festival 2019"
+  <div class="border-content top-left unselectable">
+    <a id="sgf-logo-container" href="">
+      <img
+        id="sgf-logo-default"
+        src="assets/images/sgf-logo.png"
+        alt="Sun God Festival 2019"/>
+      <img id="sgf-logo-blur" src="assets/images/sgf-logo-blur.png" alt=""
     /></a>
   </div>
   <div class="border-content top-right">
     <p>Registration Coming Soon</p>
   </div>
-  <div class="border-content bottom-left">
+  <div class="border-content bottom-left unselectable">
     <a id="asce-logo" href="http://asce.ucsd.edu/" target="_blank">
       <img src="assets/images/asce-logo.svg" alt="AS Concerts & Events"
     /></a>
-    <a href="https://ucsandiegobookstore.com/" target="_blank">
-      <img src="assets/images/bookstore-logo.svg" alt="UC San Diego Bookstore"
-    /></a>
-  </div>
-  <div class="border-content bottom-right">
     <ul id="socials">
       <li>
         <a href="https://www.facebook.com/sungodfestival/" target="_blank"
@@ -125,6 +124,12 @@
       </li>
     </ul>
   </div>
+  <div class="border-content bottom-right unselectable">
+    <a href="https://ucsandiegobookstore.com/" target="_blank">
+      <img src="assets/images/bookstore-logo.svg" alt="UC San Diego Bookstore"
+    /></a>
+  </div>
+
   <!-- Background video -->
   <div id="bg">
     <div id="countdown-container">
@@ -144,8 +149,11 @@
           </div>
         </div>
         <div id="details">
-          <span id="date">04.27.2019</span><span class="show-md"> | </span
-          ><br />12pm – 6pm | Rimac
+          <span id="date">04.27.2019</span
+          ><span class="show-md">&nbsp; | &nbsp;</span><br />12pm - 6pm<span
+            class="show-md"
+            >&nbsp; | &nbsp;</span
+          ><br />Rimac
         </div>
       </div>
     </div>

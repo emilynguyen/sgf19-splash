@@ -46,26 +46,35 @@ $border-lg: 8rem;
 }
 
 video::-webkit-media-controls-enclosure {
+  opacity: 0 !important;
   display: none !important;
 }
 
 video::-webkit-media-controls {
+  opacity: 0 !important;
   display: none !important;
 }
 
 video::-webkit-media-controls-panel {
+  opacity: 0 !important;
   display: none !important;
   -webkit-appearance: none !important;
 }
 
 video::-webkit-media-controls-play-button {
+  opacity: 0 !important;
   display: none !important;
   -webkit-appearance: none !important;
 }
 
 video::-webkit-media-controls-start-playback-button {
+  opacity: 0 !important;
   display: none !important;
   -webkit-appearance: none !important;
+}
+
+.custom-video-controls {
+  z-index: 2147483647;
 }
 
 #bg {
@@ -84,6 +93,7 @@ $border-content-offset-lg: 5.3rem;
   display: flex;
   align-items: center;
   letter-spacing: 0.18rem;
+  white-space: nowrap;
   @include md-up {
     height: 2.5rem;
   }
@@ -127,11 +137,13 @@ $border-content-offset-lg: 5.3rem;
     }
   }
   &.bottom-left {
-    right: -2rem;
-    bottom: 0;
-    transform-origin: center right;
-    transform: rotate(90deg);
+    bottom: 1rem;
+    left: -1.2rem;
+    transform-origin: 0 100%;
+    transform: rotate(-90deg);
+    flex-direction: row-reverse;
     @include md-up {
+      flex-direction: row;
       left: 0;
       right: initial;
       bottom: -$border-content-offset-md;
@@ -147,10 +159,10 @@ $border-content-offset-lg: 5.3rem;
     }
   }
   &.bottom-right {
+    right: -2rem;
     bottom: 0;
-    left: -1.2rem;
-    transform-origin: 0 100%;
-    transform: rotate(-90deg);
+    transform-origin: center right;
+    transform: rotate(90deg);
     @include md-up {
       left: initial;
       right: 0;
@@ -179,8 +191,65 @@ $border-content-offset-lg: 5.3rem;
   }
 }
 
+#sgf-logo-container {
+  position: relative;
+  height: 115%;
+  img {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #sgf-logo-blur {
+    opacity: 0;
+  }
+  #sgf-logo-blur {
+    transition: opacity 0.4s;
+  }
+  @include hover {
+    filter: initial;
+    opacity: initial;
+    #sgf-logo-blur {
+      opacity: 1;
+    }
+  }
+}
+
 #asce-logo {
-  margin-right: 2rem;
+  margin-left: 4rem;
+  position: relative;
+  @include md-up {
+    margin-right: 4rem;
+    margin-left: initial;
+  }
+  @include hover {
+    filter: initial;
+    opacity: initial;
+  }
+  img {
+    transition: filter 0.5s, opacity 0.4s;
+    @include hover {
+      filter: blur(0.2rem);
+      opacity: 0.7;
+    }
+  }
+
+  &::after {
+    content: "";
+    pointer-events: none;
+
+    position: absolute;
+    left: -2.2rem;
+    height: 60%;
+    width: 0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $gray;
+    @include md-up {
+      right: -2.4rem;
+      left: initial;
+    }
+  }
 }
 
 #countdown-container {
@@ -213,7 +282,7 @@ $border-content-offset-lg: 5.3rem;
 }
 
 #countdown {
-  margin-top: -12vh;
+  margin-top: -14.5vh;
   height: 100%;
   @include md-up {
     margin-top: 0;
@@ -226,28 +295,33 @@ $border-content-offset-lg: 5.3rem;
 }
 
 #details {
+  letter-spacing: 0.35vh;
   font-size: 2.2vh;
-  margin-top: -5vh;
-  line-height: 180%;
+  margin-top: -3vh;
+  line-height: 155%;
   position: relative;
   &::after {
     content: "";
     position: absolute;
-    top: -1.5vh;
+    top: -3vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 5vh;
+    width: 5.5vh;
     border: 0.05rem solid $red;
     @include md-up {
       display: none;
     }
   }
   @include md-up {
-    font-size: 2.5vw;
+    letter-spacing: 0.3vw;
+    font-size: 2.1vw;
     margin-top: 2vw;
     br {
       display: none;
     }
+  }
+  @include lg-up {
+    letter-spacing: 0.32vw;
   }
 }
 
@@ -255,9 +329,7 @@ $border-content-offset-lg: 5.3rem;
   display: block;
   position: relative;
   margin: 15vh 0;
-  //width: 100%;
   @include md-up {
-    //width: initial;
     margin: 0;
     display: inline-block;
   }
@@ -344,7 +416,7 @@ $border-content-offset-lg: 5.3rem;
     display: inline-block;
     transform: rotate(-90deg);
     &:not(:first-child) {
-      margin-left: 1.5rem;
+      margin-left: 1.3rem;
     }
     @include md-up {
       transform: initial;

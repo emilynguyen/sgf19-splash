@@ -3,7 +3,7 @@ email: asgraphicstudio@ucsd.edu
 description: 04.27.2019 | 12PM – 6PM | RIMAC
 baseurl: "/sgf19" # the subpath of your site, e.g. /blog
 base: "/sgf19/"
-url: "http://sgf.dreamhosters.com/sgf19" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://sgf.ucsd.edu/sgf19" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: emilynguyen
 
 # Build settings
