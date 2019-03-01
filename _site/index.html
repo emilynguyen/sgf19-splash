@@ -14,9 +14,9 @@
   <meta property="og:type" content="website" />
   <meta
     property="og:image"
-    content="http://localhost:4000/assets/images/preview.png"
+    content="http://sgf.ucsd.edu/assets/images/preview.png"
   />
-  <meta property="og:url" content="http://localhost:4000" />
+  <meta property="og:url" content="http://sgf.ucsd.edu" />
   <meta property="og:description" content="04.27.2019 | 12PM – 6PM | RIMAC" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -75,7 +75,7 @@
     
   </title>
 
-  <base href="/sgf19/" />
+  <base href="/" />
 </head>
 
 
@@ -134,28 +134,67 @@
   <div id="bg">
     <div id="countdown-container">
       <div id="countdown-wrapper">
-        <div id="countdown">
-          <div class="cd-unit">
-            <span id="cd-days" class="cd-number">00</span>
-          </div>
-          <div class="cd-unit">
-            <span id="cd-hours" class="cd-number">00</span>
-          </div>
-          <div class="cd-unit">
-            <span id="cd-mins" class="cd-number">00</span>
-          </div>
-          <div class="cd-unit">
-            <span id="cd-secs" class="cd-number">00</span>
-          </div>
-        </div>
-        <div id="details">
-          <span id="date">04.27.2019</span
-          ><span class="show-md">&nbsp; | &nbsp;</span><br />12pm - 6pm<span
-            class="show-md"
-            >&nbsp; | &nbsp;</span
-          ><br />Rimac
-        </div>
-      </div>
+  <div id="countdown">
+    <div class="cd-unit">
+      <span id="cd-days" class="cd-number">00</span>
+    </div>
+    <div class="cd-unit">
+      <span id="cd-hours" class="cd-number">00</span>
+    </div>
+    <div class="cd-unit">
+      <span id="cd-mins" class="cd-number">00</span>
+    </div>
+    <div class="cd-unit">
+      <span id="cd-secs" class="cd-number">00</span>
+    </div>
+  </div>
+  <div id="details">
+    <span id="date">04.27.2019</span><span class="show-md">&nbsp; | &nbsp;</span
+    ><br />12pm - 6pm<span class="show-md">&nbsp; | &nbsp;</span><br />Rimac
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Set the date we're counting down to
+    var countDownDate = new Date("Apr 27, 2019 12:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Prepend 0 if < 2 digits
+      if (days.toString().length < 2) days = "0" + days;
+      if (hours.toString().length < 2) hours = "0" + hours;
+      if (mins.toString().length < 2) mins = "0" + mins;
+      if (secs.toString().length < 2) secs = "0" + secs;
+
+      document.getElementById("cd-days").innerHTML = days;
+      document.getElementById("cd-hours").innerHTML = hours;
+      document.getElementById("cd-mins").innerHTML = mins;
+      document.getElementById("cd-secs").innerHTML = secs;
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  });
+</script>
+
     </div>
     <div id="video-overlay"></div>
     <video
@@ -180,45 +219,6 @@
     this.play();
   };
   video.controls = false;
-</script>
-
-<script>
-  // Set the date we're counting down to
-  var countDownDate = new Date("Apr 27, 2019 12:00:00").getTime();
-
-  // Update the count down every 1 second
-  var x = setInterval(function() {
-    // Get todays date and time
-    var now = new Date().getTime();
-
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    var mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var secs = Math.floor((distance % (1000 * 60)) / 1000);
-
-    // Prepend 0 if < 2 digits
-    if (days.toString().length < 2) days = "0" + days;
-    if (hours.toString().length < 2) hours = "0" + hours;
-    if (mins.toString().length < 2) mins = "0" + mins;
-    if (secs.toString().length < 2) secs = "0" + secs;
-
-    document.getElementById("cd-days").innerHTML = days;
-    document.getElementById("cd-hours").innerHTML = hours;
-    document.getElementById("cd-mins").innerHTML = mins;
-    document.getElementById("cd-secs").innerHTML = secs;
-
-    // If the count down is finished, write some text
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-  }, 1000);
 </script>
 
 		</article>

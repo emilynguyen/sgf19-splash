@@ -516,3 +516,21 @@ video::-webkit-media-controls-start-playback-button {
     @media (min-width: 1025px) {
       #socials img {
         height: 1.5rem; } }
+
+#error404 {
+  text-align: center; }
+  #error404 h1 {
+    font-size: 18vw;
+    line-height: 22vw; }
+  #error404 h2 {
+    font-size: 4vw;
+    line-height: 5vw; }
+  #error404 a {
+    color: inherit; }
+  @media (min-width: 1025px) {
+    #error404 h1 {
+      font-size: 15vw;
+      line-height: 16vw; }
+    #error404 h2 {
+      font-size: 3vw;
+      line-height: 4vw; } }
