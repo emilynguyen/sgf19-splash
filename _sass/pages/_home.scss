@@ -121,6 +121,7 @@ $border-content-offset-lg: 5.3rem;
   &.top-right {
     right: -2rem;
     top: 18rem;
+    top: 28.7rem;
     transform-origin: center right;
     transform: rotate(90deg);
     @include md-up {

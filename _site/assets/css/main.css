@@ -51,6 +51,24 @@ html {
     html {
       font-size: 0.42vw; } }
 
+.btn {
+  color: #ff835e;
+  border: 0.1rem solid #ff835e;
+  text-decoration: none;
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 1rem;
+  white-space: nowrap;
+  line-height: 0;
+  padding: 1.2rem 1rem 1.1rem;
+  display: inline-block;
+  margin-left: 1rem;
+  mix-blend-mode: lighten; }
+  @media (min-width: 1025px) {
+    .btn {
+      font-size: 1.4rem;
+      margin-left: 1.3rem;
+      padding: 1.8rem 2rem 1.7rem; } }
+
 @font-face {
   font-family: "Futura PT";
   src: url("../../assets/fonts/FuturaPT-Medium.woff2") format("woff2"), url("../../assets/fonts/FuturaPT-Medium.woff") format("woff");
@@ -200,6 +218,7 @@ video::-webkit-media-controls-start-playback-button {
   .border-content.top-right {
     right: -2rem;
     top: 18rem;
+    top: 28.7rem;
     -webkit-transform-origin: center right;
             transform-origin: center right;
     -webkit-transform: rotate(90deg);
