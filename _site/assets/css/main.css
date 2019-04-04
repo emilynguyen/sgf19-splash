@@ -53,7 +53,7 @@ html {
 
 .btn {
   color: #ff835e;
-  border: 0.1rem solid #ff835e;
+  border: 1px solid #ff835e;
   text-decoration: none;
   font-family: "DejaVu Sans Mono", monospace;
   font-size: 1rem;
@@ -61,12 +61,13 @@ html {
   line-height: 0;
   padding: 1.2rem 1rem 1.1rem;
   display: inline-block;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   mix-blend-mode: lighten; }
   @media (min-width: 1025px) {
     .btn {
+      border-width: 0.1rem;
       font-size: 1.4rem;
-      margin-left: 1.3rem;
+      margin-left: 0.8rem;
       padding: 1.8rem 2rem 1.7rem; } }
 
 @font-face {
@@ -217,8 +218,7 @@ video::-webkit-media-controls-start-playback-button {
                 transform: initial; } }
   .border-content.top-right {
     right: -2rem;
-    top: 18rem;
-    top: 28.7rem;
+    top: 22rem;
     -webkit-transform-origin: center right;
             transform-origin: center right;
     -webkit-transform: rotate(90deg);
